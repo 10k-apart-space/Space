@@ -1,4 +1,4 @@
-@import 'config.scss';
+@import 'etc/config.scss';
 
 body {
     background-color: map-get($colors, background);
@@ -32,43 +32,39 @@ strong {
     padding: 1rem;
     margin-top: 5rem;
 
-    &__name {
+    h2 {
+        margin: 3rem 0rem 1rem 0rem;
+        padding: 0px;
+    }
+
+    ul {
         margin: 0px;
         padding: 0px;
     }
 
-    &__image {
-        margin: 2rem 0rem;
-
-        $biggest-size: 139822;
-        $planets: (
-            mercury: 4879,
-            venus: 12104,
-            earth: 12742,
-            mars: 6779,
-            jupiter: 139822,
-            saturn: 116464,
-            uranus: 50724,
-            neptune: 49244,
-        );
-        @each $planet, $size in $planets {
-            &--#{$planet} {
-                width: ($size / $biggest-size) * 100%;
-            }
-        }
-    }
-
-    &__fact-list {
-        margin: 0px;
-        padding: 0px;
-    }
-
-    &__fact {
+    li {
         list-style-type: none;
+    }
 
-        & + & {
-            margin-top: 1rem;
-        }
+    li + li {
+        margin-top: 0.5rem;
+    }
+}
+
+$biggest-size: 139822;
+$planets: (
+    mercury: 4879,
+    venus: 12104,
+    earth: 12742,
+    mars: 6779,
+    jupiter: 139822,
+    saturn: 116464,
+    uranus: 50724,
+    neptune: 49244,
+);
+@each $planet, $size in $planets {
+    img.#{$planet} {
+        width: ($size / $biggest-size) * 100%;
     }
 }
 

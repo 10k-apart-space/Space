@@ -1,0 +1,27 @@
+.Planet {
+    cursor: help;
+
+    &:hover {
+        img {
+            transform: scale(0.8);
+            opacity: 0.5;
+        }
+
+        article {
+            opacity: 1;
+            transform: translateY(0rem);
+        }
+    }
+}
+
+article {
+    opacity: 0;
+    transform: translateY(4rem);
+    transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.Planet {
+    img {
+        transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+}
