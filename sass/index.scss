@@ -1,0 +1,82 @@
+@import 'config.scss';
+
+body {
+    background-color: map-get($colors, background);
+    color: map-get($colors, foreground);
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+$headings: h1 h2 h3 h4 h5 h6;
+@each $heading in $headings {
+    #{$heading} {
+        font-weight: 700;
+    }
+}
+
+small {
+    font-size: 14px;
+    color: map-get($colors, meta);
+    display: block;
+}
+
+strong {
+    color: map-get($colors, foreground_alt);
+}
+
+.Planet {
+    padding: 1rem;
+    margin-top: 5rem;
+
+    &__name {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    &__image {
+        margin: 2rem 0rem;
+
+        $biggest-size: 139822;
+        $planets: (
+            mercury: 4879,
+            venus: 12104,
+            earth: 12742,
+            mars: 6779,
+            jupiter: 139822,
+            saturn: 116464,
+            uranus: 50724,
+            neptune: 49244,
+        );
+        @each $planet, $size in $planets {
+            &--#{$planet} {
+                width: ($size / $biggest-size) * 100%;
+            }
+        }
+    }
+
+    &__fact-list {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    &__fact {
+        list-style-type: none;
+
+        & + & {
+            margin-top: 1rem;
+        }
+    }
+}
+
+#Sun {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 193rem;
+    color: map-get($colors, background);
+    margin-top: 10rem;
+    padding: 70rem 1rem 3rem 1rem;
+}
