@@ -9,19 +9,23 @@ body {
     margin: 0px;
     padding: 0px;
     text-align: center;
+    overflow-x: hidden;
 }
 
-$headings: h1 h2 h3 h4 h5 h6;
-@each $heading in $headings {
-    #{$heading} {
-        font-weight: 700;
-    }
+h1, h2 {
+    font-weight: 700;
+    font-size: 90px;
+}
+
+h2 {
+    font-size: 70px;
 }
 
 small {
     font-size: 14px;
-    color: map-get($colors, meta);
+    color: darken(map-get($colors, foreground), 20%);
     display: block;
+    margin-bottom: 5px;
 }
 
 strong {
@@ -29,11 +33,13 @@ strong {
 }
 
 .Planet {
-    padding: 1rem;
-    margin-top: 5rem;
+    padding: 18px;
+    margin-top: 90px;
+    z-index: 999;
+    position: relative;
 
     h2 {
-        margin: 3rem 0rem 1rem 0rem;
+        margin: 54px 0px 18px 0px;
         padding: 0px;
     }
 
@@ -47,7 +53,7 @@ strong {
     }
 
     li + li {
-        margin-top: 0.5rem;
+        margin-top: 9px;
     }
 }
 
@@ -71,8 +77,20 @@ $planets: (
 #Sun {
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: 193rem;
+    background-size: 3474px;
     color: map-get($colors, background);
-    margin-top: 10rem;
-    padding: 70rem 1rem 3rem 1rem;
+    margin-top: 180px;
+    padding: 1260px 18px 54px 18px;
+    z-index: 999;
+    position: relative;
+}
+
+a {
+    &:link, &:active, &:hover, &:visited {
+        color: lighten(map-get($colors, foreground), 10%);
+    }
+}
+
+p {
+    margin-bottom: 90px;
 }
