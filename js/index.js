@@ -13,14 +13,18 @@ var ready = function(fn) {
 
 ready(function() {
     LazyLoad.css('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
     LazyLoad.js('https://cdnjs.cloudflare.com/ajax/libs/blazy/1.6.2/blazy.min.js', function() {
         new Blazy({
             offset: 500,
         });
     });
+
+    LazyLoad.css('/dist/extended.css');
+
     LazyLoad.js('https://cdnjs.cloudflare.com/ajax/libs/feature.js/1.0.1/feature.min.js', function() {
         if (feature.cssTransform && feature.cssTransition && feature.viewportUnit) {
-            LazyLoad.css('/dist/extended.css');
+            LazyLoad.css('/dist/full.css');
         }
     });
 });

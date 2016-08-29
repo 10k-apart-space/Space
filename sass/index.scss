@@ -35,6 +35,13 @@ h2 {
     }
 }
 
+p.intro {
+    max-width: 690px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 70px;
+}
+
 small {
     font-size: 14px;
     color: map-get($colors, foreground);
@@ -67,28 +74,6 @@ strong {
 
     li + li {
         margin-top: 9px;
-    }
-}
-
-#Sun {
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: 710px;
-    color: map-get($colors, background);
-    margin-top: 180px;
-    padding: 160px 18px 54px 18px;
-    z-index: 999;
-    position: relative;
-    display: block;
-
-    @media (min-width: 900px) {
-        background-size: 2000px;
-        padding: 800px 18px 54px 18px;
-    }
-
-    @media (min-width: 1600px) {
-        background-size: 4500px;
-        padding: 1260px 18px 54px 18px;
     }
 }
 

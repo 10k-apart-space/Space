@@ -1,103 +1,7 @@
 @import 'etc/config.scss';
 
-@function multiple-box-shadow ($n) {
-    $value: '#{random(100)}vw #{random(10000)}vh #FFF';
-    @for $i from 2 through $n {
-        $value: '#{$value} , #{random(100)}vw #{random(10000)}vh #FFF';
-    }
-
-    @return unquote($value);
-}
-
-$shadows-small:  multiple-box-shadow(500);
-$shadows-medium: multiple-box-shadow(300);
-$shadows-big:    multiple-box-shadow(200);
-
-#stars1 {
-    width: 1px;
-    height: 1px;
-    background: transparent;
-    box-shadow: $shadows-small;
-    animation: animStar 600s linear infinite;
-    opacity: 0.7;
-
-    &:after {
-        content: " ";
-        position: absolute;
-        top: 100vh;
-        width: 1px;
-        height: 1px;
-        background: transparent;
-        box-shadow: $shadows-small;
-    }
-}
-
-#stars2 {
-    width: 2px;
-    height: 2px;
-    background: transparent;
-    box-shadow: $shadows-medium;
-    animation: animStar 300s linear infinite;
-    opacity: 0.8;
-
-    &:after {
-        content: " ";
-        position: absolute;
-        top: 100vh;
-        width: 2px;
-        height: 2px;
-        background: transparent;
-        box-shadow: $shadows-medium;
-    }
-}
-
-#stars3 {
-    width: 3px;
-    height: 3px;
-    background: transparent;
-    box-shadow: $shadows-big;
-    animation: animStar 150s linear infinite;
-    opacity: 0.9;
-
-    &:after {
-        content: " ";
-        position: absolute;
-        top: 100vh;
-        width: 3px;
-        height: 3px;
-        background: transparent;
-        box-shadow: $shadows-big;
-    }
-}
-
-@keyframes animStar {
-    from {
-        transform: translateY(0px);
-    }
-
-    to {
-        transform: translateY(-100vh);
-    }
-}
-
-body {
-    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-}
-
-h1, h2 {
-    text-shadow:
-        0 1px 0 darken(map-get($colors, foreground), 30%),
-        0 2px 0 darken(map-get($colors, foreground), 32%),
-        0 3px 0 darken(map-get($colors, foreground), 34%),
-        0 4px 0 darken(map-get($colors, foreground), 36%),
-        0 5px 0 darken(map-get($colors, foreground), 38%),
-        0 6px 1px rgba(0, 0, 0, .1),
-        0 0 5px rgba(0, 0, 0, .1),
-        0 1px 3px rgba(0, 0, 0, .3),
-        0 3px 5px rgba(0, 0, 0, .2),
-        0 5px 10px rgba(0, 0, 0, .25),
-        0 10px 10px rgba(0, 0, 0, .2),
-        0 20px 20px rgba(0, 0, 0, .15);
+header {
+    margin-bottom: 80px;
 }
 
 .comet {
@@ -115,7 +19,7 @@ h1, h2 {
         left: 0;
         right: 0;
         width: 100%;
-        bottom: -100px;
+        bottom: -140px;
         text-align: center;
     }
 }
@@ -150,16 +54,27 @@ $planet_distances: (
 @each $planet, $distance in $planet_distances {
     .#{$planet} {
         margin-bottom: floor(map-get($planet_distances, $planet) / 500000) * 1px;
+    }
+}
 
-        &:after {
-            content: " ";
-            border-left: 1px dotted white;
-            width: 1px;
-            height: floor(map-get($planet_distances, $planet) / 500000) * 1px;
-            position: absolute;
-            top: (map-get($planet_sizes, $planet) / $biggest-size) * 100vw;
-            left: 50%;
-            opacity: 0.1;
-        }
+#Sun {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 710px;
+    color: map-get($colors, background);
+    margin-top: 180px;
+    padding: 160px 18px 54px 18px;
+    z-index: 999;
+    position: relative;
+    display: block;
+
+    @media (min-width: 900px) {
+        background-size: 2000px;
+        padding: 800px 18px 54px 18px;
+    }
+
+    @media (min-width: 1600px) {
+        background-size: 4500px;
+        padding: 1260px 18px 54px 18px;
     }
 }
