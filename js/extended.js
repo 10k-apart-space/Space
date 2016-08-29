@@ -85,7 +85,7 @@ var spawnComent2 = function() {
 };
 
 var runner1 = function() {
-    var seed = random(5000, 10000);
+    var seed = random(5000, 50000);
 
     setTimeout(function() {
         spawnComent1();
@@ -97,7 +97,7 @@ spawnComent1();
 runner1();
 
 var runner2 = function() {
-    var seed = random(5000, 10000);
+    var seed = random(5000, 50000);
 
     setTimeout(function() {
         spawnComent2();

@@ -17,7 +17,7 @@ ready(function() {
         new Blazy();
     });
     LazyLoad.js('https://cdnjs.cloudflare.com/ajax/libs/feature.js/1.0.1/feature.min.js', function() {
-        if (feature.cssTransform && feature.cssTransition) {
+        if (feature.cssTransform && feature.cssTransition && feature.viewportUnit) {
             LazyLoad.css('/dist/extended.css', function() {
                 LazyLoad.js('https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js', function() {
                     LazyLoad.js('https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js', function() {
