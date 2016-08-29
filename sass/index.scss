@@ -14,13 +14,21 @@ body {
 
 h1, h2 {
     font-weight: 700;
-    font-size: 90px;
+    font-size: 70px;
     padding-left: 18px;
     padding-right: 18px;
+
+    @media (min-width: 544px) {
+        font-size: 90px;
+    }
 }
 
 h2 {
-    font-size: 70px;
+    font-size: 50px;
+
+    @media (min-width: 544px) {
+        font-size: 70px;
+    }
 }
 
 small {
@@ -79,12 +87,22 @@ $planets: (
 #Sun {
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: 4500px;
+    background-size: 710px;
     color: map-get($colors, background);
     margin-top: 180px;
-    padding: 1260px 18px 54px 18px;
+    padding: 160px 18px 54px 18px;
     z-index: 999;
     position: relative;
+
+    @media (min-width: 900px) {
+        background-size: 2000px;
+        padding: 800px 18px 54px 18px;
+    }
+
+    @media (min-width: 1600px) {
+        background-size: 4500px;
+        padding: 1260px 18px 54px 18px;
+    }
 }
 
 a {
