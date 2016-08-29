@@ -83,11 +83,11 @@ body {
 
 h1, h2 {
     text-shadow:
-        0 1px 0 darken(map-get($colors, foreground), 25%),
-        0 2px 0 darken(map-get($colors, foreground), 27%),
-        0 3px 0 darken(map-get($colors, foreground), 29%),
-        0 4px 0 darken(map-get($colors, foreground), 31%),
-        0 5px 0 darken(map-get($colors, foreground), 33%),
+        0 1px 0 darken(map-get($colors, foreground), 30%),
+        0 2px 0 darken(map-get($colors, foreground), 32%),
+        0 3px 0 darken(map-get($colors, foreground), 34%),
+        0 4px 0 darken(map-get($colors, foreground), 36%),
+        0 5px 0 darken(map-get($colors, foreground), 38%),
         0 6px 1px rgba(0, 0, 0, .1),
         0 0 5px rgba(0, 0, 0, .1),
         0 1px 3px rgba(0, 0, 0, .3),

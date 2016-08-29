@@ -23,7 +23,7 @@ h2 {
 
 small {
     font-size: 14px;
-    color: darken(map-get($colors, foreground), 20%);
+    color: map-get($colors, foreground);
     display: block;
     margin-bottom: 5px;
 }
@@ -77,7 +77,7 @@ $planets: (
 #Sun {
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: 3474px;
+    background-size: 4500px;
     color: map-get($colors, background);
     margin-top: 180px;
     padding: 1260px 18px 54px 18px;
