@@ -1,17 +1,17 @@
 @import 'etc/config.scss';
 
 @function multiple-box-shadow ($n) {
-    $value: '#{random(100)}vw #{random(1000)}vh #FFF';
+    $value: '#{random(100)}vw #{random(10000)}vh #FFF';
     @for $i from 2 through $n {
-        $value: '#{$value} , #{random(100)}vw #{random(1000)}vh #FFF';
+        $value: '#{$value} , #{random(100)}vw #{random(10000)}vh #FFF';
     }
 
     @return unquote($value);
 }
 
-$shadows-small:  multiple-box-shadow(100);
-$shadows-medium: multiple-box-shadow(80);
-$shadows-big:    multiple-box-shadow(50);
+$shadows-small:  multiple-box-shadow(500);
+$shadows-medium: multiple-box-shadow(300);
+$shadows-big:    multiple-box-shadow(200);
 
 #stars1 {
     width: 1px;
@@ -19,7 +19,7 @@ $shadows-big:    multiple-box-shadow(50);
     background: transparent;
     box-shadow: $shadows-small;
     animation: animStar 600s linear infinite;
-    opacity: 0.5;
+    opacity: 0.7;
 
     &:after {
         content: " ";
@@ -38,7 +38,7 @@ $shadows-big:    multiple-box-shadow(50);
     background: transparent;
     box-shadow: $shadows-medium;
     animation: animStar 300s linear infinite;
-    opacity: 0.6;
+    opacity: 0.8;
 
     &:after {
         content: " ";
@@ -57,7 +57,7 @@ $shadows-big:    multiple-box-shadow(50);
     background: transparent;
     box-shadow: $shadows-big;
     animation: animStar 150s linear infinite;
-    opacity: 0.7;
+    opacity: 0.9;
 
     &:after {
         content: " ";
@@ -104,4 +104,62 @@ h1, h2 {
     position: absolute;
     width: 54px;
     z-index: 1;
+}
+
+.Planet {
+    position: relative;
+    display: block;
+
+    article {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        bottom: -100px;
+        text-align: center;
+    }
+}
+
+$biggest-size: 139822;
+$planet_sizes: (
+    mercury: 4879,
+    venus: 12104,
+    earth: 12742,
+    mars: 6779,
+    jupiter: 139822,
+    saturn: 116464,
+    uranus: 50724,
+    neptune: 49244,
+);
+@each $planet, $size in $planet_sizes {
+    .#{$planet} > img {
+        width: ($size / $biggest-size) * 100%;
+    }
+}
+
+$planet_distances: (
+    mercury: 57909227,
+    venus: 108209475,
+    earth: 149598262,
+    mars: 227943824,
+    jupiter: 778340821,
+    saturn: 1426666422,
+    uranus: 2870658186,
+    neptune: 4498396441,
+);
+@each $planet, $distance in $planet_distances {
+    .#{$planet} {
+        margin-bottom: floor(map-get($planet_distances, $planet) / 500000) * 1px;
+
+        &:after {
+            content: " ";
+            border-left: 1px dotted white;
+            width: 1px;
+            height: floor(map-get($planet_distances, $planet) / 500000) * 1px;
+            position: absolute;
+            top: (map-get($planet_sizes, $planet) / $biggest-size) * 100vw;
+            left: 50%;
+            opacity: 0.1;
+        }
+    }
 }

@@ -1,5 +1,9 @@
 @import 'etc/config.scss';
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: map-get($colors, background);
     color: map-get($colors, foreground);
@@ -24,10 +28,10 @@ h1, h2 {
 }
 
 h2 {
-    font-size: 50px;
+    font-size: 30px;
 
     @media (min-width: 544px) {
-        font-size: 70px;
+        font-size: 50px;
     }
 }
 
@@ -43,8 +47,7 @@ strong {
 }
 
 .Planet {
-    padding: 18px;
-    margin-top: 90px;
+    padding: 0px 18px 18px 18px;
     z-index: 999;
     position: relative;
 
@@ -67,23 +70,6 @@ strong {
     }
 }
 
-$biggest-size: 139822;
-$planets: (
-    mercury: 4879,
-    venus: 12104,
-    earth: 12742,
-    mars: 6779,
-    jupiter: 139822,
-    saturn: 116464,
-    uranus: 50724,
-    neptune: 49244,
-);
-@each $planet, $size in $planets {
-    img.#{$planet} {
-        width: ($size / $biggest-size) * 100%;
-    }
-}
-
 #Sun {
     background-position: top center;
     background-repeat: no-repeat;
@@ -93,6 +79,7 @@ $planets: (
     padding: 160px 18px 54px 18px;
     z-index: 999;
     position: relative;
+    display: block;
 
     @media (min-width: 900px) {
         background-size: 2000px;
