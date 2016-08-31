@@ -16,7 +16,7 @@ ready(function() {
 
     LazyLoad.js('https://cdnjs.cloudflare.com/ajax/libs/blazy/1.6.2/blazy.min.js', function() {
         new Blazy({
-            offset: 500,
+            offset: 100,
         });
     });
 

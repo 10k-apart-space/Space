@@ -16,6 +16,10 @@ body {
     overflow-x: hidden;
 }
 
+header {
+    margin-bottom: 72px;
+}
+
 h1, h2 {
     font-weight: 700;
     font-size: 70px;
@@ -40,6 +44,7 @@ p.intro {
     margin: 0 auto;
     display: block;
     margin-bottom: 70px;
+    padding: 0 18px;
 }
 
 small {
