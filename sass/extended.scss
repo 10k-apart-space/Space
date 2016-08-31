@@ -24,39 +24,6 @@ header {
     }
 }
 
-$biggest-size: 139822;
-$planet_sizes: (
-    mercury: 4879,
-    venus: 12104,
-    earth: 12742,
-    mars: 6779,
-    jupiter: 139822,
-    saturn: 116464,
-    uranus: 50724,
-    neptune: 49244,
-);
-@each $planet, $size in $planet_sizes {
-    .#{$planet} > img {
-        width: ($size / $biggest-size) * 100%;
-    }
-}
-
-$planet_distances: (
-    mercury: 57909227,
-    venus: 108209475,
-    earth: 149598262,
-    mars: 227943824,
-    jupiter: 778340821,
-    saturn: 1426666422,
-    uranus: 2870658186,
-    neptune: 4498396441,
-);
-@each $planet, $distance in $planet_distances {
-    .#{$planet} {
-        margin-bottom: floor(map-get($planet_distances, $planet) / 500000) * 1px;
-    }
-}
-
 #Sun {
     background-position: top center;
     background-repeat: no-repeat;
