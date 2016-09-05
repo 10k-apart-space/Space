@@ -5,8 +5,8 @@ header {
 }
 
 .b-lazy {
-    max-width: 100%;
     opacity: 0;
+    max-width: 100%;
     transition: opacity 500ms ease-in-out;
 }
 
@@ -15,18 +15,20 @@ header {
 }
 
 .comet {
-    position: absolute;
-    width: 54px;
     z-index: 1;
+    width: 54px;
+    position: absolute;
 }
 
-.spaceship {
-    position: fixed;
-    top: 90vh;
-    width: 80px;
+#spaceship {
     left: 50%;
-    margin-left: (-80 / 2) * 1px;
+    width: 80px;
+    bottom: 20px;
     z-index: 999;
+    position: fixed;
+    transform: rotate(0deg);
+    transition: all .3s ease;
+    margin-left: (-80 / 2) * 1px;
 }
 
 .Planet {
@@ -34,25 +36,25 @@ header {
     position: relative;
 
     article {
-        bottom: -140px;
         left: 0;
-        position: absolute;
         right: 0;
-        text-align: center;
         width: 100%;
+        bottom: -140px;
+        position: absolute;
+        text-align: center;
     }
 }
 
 #Sun {
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: 710px;
-    color: map-get($colors, background);
+    z-index: 999;
     display: block;
     margin-top: 180px;
-    padding: 160px 18px 54px 18px;
     position: relative;
-    z-index: 999;
+    background-size: 710px;
+    background-repeat: no-repeat;
+    padding: 160px 18px 54px 18px;
+    background-position: top center;
+    color: map-get($colors, background);
 
     @media (min-width: 900px) {
         background-size: 2000px;
