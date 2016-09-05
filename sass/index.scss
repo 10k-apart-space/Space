@@ -65,7 +65,7 @@ strong {
     color: map-get($colors, foreground_alt);
 }
 
-.Planet {
+.planet {
     z-index: 999;
     position: relative;
     padding: 0px 18px 18px 18px;
@@ -87,6 +87,32 @@ strong {
 
     li + li {
         margin-top: 9px;
+    }
+}
+
+#spaceship {
+    display: none;
+}
+
+#sun {
+    z-index: 999;
+    display: block;
+    margin-top: 180px;
+    position: relative;
+    background-size: 710px;
+    background-repeat: no-repeat;
+    padding: 160px 18px 54px 18px;
+    background-position: top center;
+    color: map-get($colors, background);
+
+    @media (min-width: 900px) {
+        background-size: 2000px;
+        padding: 800px 18px 54px 18px;
+    }
+
+    @media (min-width: 1600px) {
+        background-size: 4500px;
+        padding: 1260px 18px 54px 18px;
     }
 }
 

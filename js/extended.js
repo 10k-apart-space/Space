@@ -2,13 +2,8 @@ var getTop = function() {
     return window.pageYOffset || document.documentElement.scrollTop;
 };
 
-var getOffset = function(el) {
-    var rect = el.getBoundingClientRect();
-
-    return {
-        top: rect.top + document.body.scrollTop,
-        left: rect.left + document.body.scrollLeft
-    };
+var getTopOffset = function(el) {
+    return el.getBoundingClientRect().top + getTop();
 };
 
 var spaceship = document.getElementById('spaceship');
@@ -20,9 +15,9 @@ var thrusters_on = false;
 
 window.onscroll = function() {
     var current_top = getTop();
-    var earth_offset = getOffset(earth);
+    var earth_top_offset = getTopOffset(earth);
     var transform = '';
-    var distance = earth_offset.top - current_top - 945;
+    var distance = earth_top_offset - current_top - 945;
 
     if (current_top > last_top_rot) {
         transform += 'rotate(0deg) ';

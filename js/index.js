@@ -23,7 +23,7 @@ ready(function() {
     LazyLoad.css('dist/extended.css');
 
     LazyLoad.js('https://cdnjs.cloudflare.com/ajax/libs/feature.js/1.0.1/feature.min.js', function() {
-        if (feature.cssTransform && feature.cssTransition && feature.viewportUnit) {
+        if (feature.cssTransform && feature.css3Dtransform && feature.cssTransition && feature.viewportUnit) {
             LazyLoad.css('dist/full.css');
             LazyLoad.js('dist/extended.js');
         }

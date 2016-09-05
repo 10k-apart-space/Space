@@ -25,13 +25,14 @@ header {
     width: 80px;
     bottom: 20px;
     z-index: 999;
+    display: block;
     position: fixed;
     transform: rotate(0deg);
     transition: all .3s ease;
     margin-left: (-80 / 2) * 1px;
 }
 
-.Planet {
+.planet {
     display: block;
     position: relative;
 
@@ -42,27 +43,5 @@ header {
         bottom: -140px;
         position: absolute;
         text-align: center;
-    }
-}
-
-#Sun {
-    z-index: 999;
-    display: block;
-    margin-top: 180px;
-    position: relative;
-    background-size: 710px;
-    background-repeat: no-repeat;
-    padding: 160px 18px 54px 18px;
-    background-position: top center;
-    color: map-get($colors, background);
-
-    @media (min-width: 900px) {
-        background-size: 2000px;
-        padding: 800px 18px 54px 18px;
-    }
-
-    @media (min-width: 1600px) {
-        background-size: 4500px;
-        padding: 1260px 18px 54px 18px;
     }
 }
