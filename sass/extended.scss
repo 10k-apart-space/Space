@@ -5,7 +5,7 @@ header {
 }
 
 .b-lazy {
-    opacity: 0;
+    opacity: 1;
     max-width: 100%;
     transition: opacity 500ms ease-in-out;
 }
@@ -35,13 +35,4 @@ header {
 .planet {
     display: block;
     position: relative;
-
-    article {
-        left: 0;
-        right: 0;
-        width: 100%;
-        bottom: -140px;
-        position: absolute;
-        text-align: center;
-    }
 }

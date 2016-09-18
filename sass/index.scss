@@ -17,6 +17,10 @@ body {
     background-color: map-get($colors, background);
 }
 
+img {
+    display: inline-block;
+}
+
 header {
     margin-bottom: 72px;
 }
@@ -72,7 +76,7 @@ strong {
 
     h2 {
         padding: 0px;
-        margin: 54px 0px 18px 0px;
+        margin: 36px 0px 18px 0px;
     }
 
     ul {
